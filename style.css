@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Russo One', sans-serif;
+  color: #f7d43a;
+  overflow-x: hidden;
+  margin: 0;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Прозрачный чёрный слой */
+  z-index: -1;
+}
+
+body {
+  background: url('assets/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.overlay {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 2s ease;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px #f7d43a);
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px #f7d43a;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.btn {
+  background: #f7d43a;
+  color: #000;
+  text-decoration: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #f7d43a;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #f7d43a;
+  box-shadow: 0 0 20px #f7d43a;
+}
+
+section {
+  padding: 80px 20px;
+  background-color: #111;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffdf00;
+}
+
+section p, section ul {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ccc;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 10px 0;
+}
+
+footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+  border-radius: 20px;
+}
