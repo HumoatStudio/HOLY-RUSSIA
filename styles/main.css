@@ -1,61 +1,88 @@
-.logo-panel {
-    display: none;
-    position: absolute;
-    top: 60px; /* или 80px, если header выше */
-    left: 20px;
-    background-color: #051017;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 15px 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-
-.logo-panel ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.logo-panel li {
-    margin: 10px 0;
-}
-
-.logo-panel a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.logo-panel a:hover {
-    color: #a7bc1e;
-}
-
-.logo-panel.show {
-    display: block;
-}
-
 .site-header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20px;
-    position: relative;
+  background: rgba(50, 50, 50, 0.5); /* полупрозрачный фон */
+  backdrop-filter: blur(8px); /* эффект стекла */
+  padding: 10px 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .site-logo {
-    width: 40px;
-    height: auto;
-    border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
 }
 
-.logo-text {
-    margin-left: 10px;
+.main-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #fff;
+}
+
+.main-nav a:first-child::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn.black {
+  background-color: black;
+}
+
+.btn.red {
+  background-color: #f3425f;
+}
+
+.download-icon {
+  margin-left: 5px;
 }

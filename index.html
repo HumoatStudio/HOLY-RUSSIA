@@ -7,20 +7,23 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="styles/scroll.css" />
   <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/requirements.css" />
   <link rel="icon" href="assets/icon.jpg" type="image/png">
 </head>
 
     <header class="site-header">
-      <div class="logo-container" onclick="togglePanel()">
+      <div class="header-inner">
+        <div class="logo-container" onclick="togglePanel()">
           <img src="assets/icon.jpg" alt="Twisty Logo" class="site-logo">
-          <span class="logo-text">Twisty</span>
-      </div>
-    
-      <div class="logo-panel" id="logoPanel">
-          <ul>
-              <li><a href="login.html">Вход</a></li>
-              <li><a href="Support.html">Тех. Поддержка</a></li>
-          </ul>
+        </div>
+
+        <nav class="main-nav">
+          <a href="#">Главная</a>
+        </nav>
+
+        <div class="buttons">
+          <a href="#Download" class="btn red">Начать игру <span class="download-icon">⬇</span></a>
+        </div>
       </div>
     </header>
     
@@ -38,14 +41,82 @@
     </p>
   </section>
 
-  <section class="requirements">
-    <h2>Системные требования</h2>
-    <ul>
-      <li>✅ Windows 7/10/11</li>
-      <li>✅ 2GB RAM минимум</li>
-      <li>✅ GTA: San Andreas + CRMP 0.3.7</li>
-    </ul>
+  <section id="Download" class="requirements-block">
+    <div class="requirements-container">
+      <div class="left-content">
+        <h1>Установи наш лаунчер</h1>
+        <p class="sub">Скачать SAMP можно бесплатно<br><span>для Windows и Android</span></p>
+
+        <div class="system-box">
+          <h2>Системные требования</h2>
+
+          <div class="platform-buttons">
+            <button class="platform active" id="btn-windows">
+              <img src="assets/windows-174-svgrepo-com.svg" alt="Windows" style="width: 20px; height: 20px; margin-right: 8px;">
+              Windows
+            </button>
+
+            <button class="platform" id="btn-android">
+              <img src="assets/android-svgrepo-com.svg" alt="Android" style="width: 20px; height: 20px; margin-right: 8px;">
+              Android
+            </button>
+          </div>
+
+          <div class="system-info" id="system-info">
+            <!-- Windows по умолчанию -->
+            <div><span>OC</span><p>Windows 10 (64 бит)</p></div>
+            <div><span>Процессор</span><p>Intel Core i5-6600K / AMD FX-6300</p></div>
+            <div><span>Оперативная память</span><p>6 ГБ</p></div>
+            <div><span>Видеокарта</span><p>От 2 ГБ видеопамяти</p></div>
+            <div><span>Место на диске</span><p>12 ГБ</p></div>
+          </div>
+
+          <a href="#" class="download-btn" id="download-link">⬇ Скачать игру</a>
+        </div>
+      </div>
+
+      <div class="right-image">
+        <img src="assets/PC Android.png" alt="Игровой ноутбук">
+      </div>
+    </div>
   </section>
+
+  <script>
+    const btnWindows = document.getElementById('btn-windows');
+    const btnAndroid = document.getElementById('btn-android');
+    const systemInfo = document.getElementById('system-info');
+    const downloadLink = document.getElementById('download-link');
+
+    const windowsInfo = `
+      <div><span>OC</span><p>Windows 10 (64 бит)</p></div>
+      <div><span>Процессор</span><p>Intel Core i5-6600K / AMD FX-6300</p></div>
+      <div><span>Оперативная память</span><p>6 ГБ</p></div>
+      <div><span>Видеокарта</span><p>От 2 ГБ видеопамяти</p></div>
+      <div><span>Место на диске</span><p>12 ГБ</p></div>
+    `;
+
+    const androidInfo = `
+      <div><span>OC</span><p>Android 7.0 и выше</p></div>
+      <div><span>Процессор</span><p>Snapdragon 665 / MediaTek Helio G85</p></div>
+      <div><span>Оперативная память</span><p>4 ГБ</p></div>
+      <div><span>Видеоускоритель</span><p>Adreno 610 / Mali-G52</p></div>
+      <div><span>Память</span><p>3 ГБ свободного места</p></div>
+    `;
+
+    btnWindows.addEventListener('click', () => {
+      btnWindows.classList.add('active');
+      btnAndroid.classList.remove('active');
+      systemInfo.innerHTML = windowsInfo;
+      downloadLink.textContent = "⬇ Скачать игру";
+    });
+
+    btnAndroid.addEventListener('click', () => {
+      btnAndroid.classList.add('active');
+      btnWindows.classList.remove('active');
+      systemInfo.innerHTML = androidInfo;
+      downloadLink.textContent = "⬇ Скачать игру на Android";
+    });
+  </script>
 
   <footer>
     <p>© 2025 HOLY RUSSIA CRMP | Все права защищены</p>
