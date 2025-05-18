@@ -1,0 +1,89 @@
+.stats-block {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 2px solid #f7d43a;
+      border-bottom: 2px solid #f7d43a;
+      margin: 40px 0;
+    }
+    
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .stats-item {
+      text-align: center;
+    }
+    
+    .stats-item h2 {
+      font-size: 3rem;
+      color: #f7d43a;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(247, 212, 58, 0.7);
+    }
+    
+    .stats-item p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+    
+    .game-description {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #eee;
+      text-align: center;
+    }
+    
+    .game-description h3 {
+      font-size: 1.8rem;
+      color: #f7d43a;
+      margin-bottom: 20px;
+    }
+    
+    .game-description p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .history-block {
+      background: rgba(247, 212, 58, 0.1);
+      border-left: 3px solid #f7d43a;
+      padding: 20px;
+      margin: 30px 0;
+      text-align: left;
+    }
+    
+    .history-block h4 {
+      color: #f7d43a;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    
+    .history-block p {
+      font-size: 1rem;
+    }
+    
+    .copyright {
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 30px;
+    }
+    
+    @media (max-width: 768px) {
+      .stats-container {
+        gap: 30px;
+      }
+      
+      .stats-item h2 {
+        font-size: 2.2rem;
+      }
+      
+      .game-description {
+        padding: 0 15px;
+      }
+    }

@@ -8,9 +8,13 @@
   <link rel="stylesheet" href="styles/scroll.css" />
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/requirements.css" />
+  <link rel="stylesheet" href="styles/stats.css" />
+  <link rel="stylesheet" href="styles/Version.css" />
+  <script src="scripts/Version.js"></script>
   <link rel="icon" href="assets/icon.jpg" type="image/png">
 </head>
 
+<body>
     <header class="site-header">
       <div class="header-inner">
         <div class="logo-container" onclick="togglePanel()">
@@ -51,7 +55,7 @@
           <h2>Системные требования</h2>
 
           <div class="platform-buttons">
-            <button class="platform active" id="btn-windows">
+            <button class="platform" id="btn-windows">
               <img src="assets/windows-174-svgrepo-com.svg" alt="Windows" style="width: 20px; height: 20px; margin-right: 8px;">
               Windows
             </button>
@@ -62,62 +66,81 @@
             </button>
           </div>
 
-          <div class="system-info" id="system-info">
-            <!-- Windows по умолчанию -->
-            <div><span>OC</span><p>Windows 10 (64 бит)</p></div>
-            <div><span>Процессор</span><p>Intel Core i5-6600K / AMD FX-6300</p></div>
-            <div><span>Оперативная память</span><p>6 ГБ</p></div>
-            <div><span>Видеокарта</span><p>От 2 ГБ видеопамяти</p></div>
-            <div><span>Место на диске</span><p>12 ГБ</p></div>
+          <div class="system-info">
+            <!-- Windows требования -->
+            <div class="requirements-windows">
+              <div class="req-item"><span>OC</span><p>Windows 10 (64 бит)</p></div>
+              <div class="req-item"><span>Процессор</span><p>Intel Core i5-6600K / AMD FX-6300</p></div>
+              <div class="req-item"><span>Оперативная память</span><p>6 ГБ</p></div>
+              <div class="req-item"><span>Видеокарта</span><p>От 2 ГБ видеопамяти</p></div>
+              <div class="req-item"><span>Место на диске</span><p>12 ГБ</p></div>
+            </div>
+            
+            <!-- Android требования -->
+            <div class="requirements-android">
+              <div class="req-item"><span>OC</span><p>Android 5 и выше</p></div>
+              <div class="req-item"><span>Процессор</span><p>С частотой от 1.2 ГГц</p></div>
+              <div class="req-item"><span>Оперативная память</span><p>4 ГБ</p></div>
+              <div class="req-item"><span>Место на диске</span><p>8 ГБ</p></div>
+              
+              <div class="stores">
+                <h3>Доступно в магазинах:</h3>
+                <div class="store-badges">
+                  <div class="store-badge">
+                    <img src="assets/RuStore.png" alt="RuStore">
+                    <span>RuStore</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <a href="#" class="download-btn" id="download-link">⬇ Скачать игру</a>
+          <a href="#" class="download-btn" id="download-link">⬇ Скачать</a>
         </div>
       </div>
 
       <div class="right-image">
-        <img src="assets/PC Android.png" alt="Игровой ноутбук">
+        <img src="assets/PC.png" alt="Игровой ноутбук" class="image-windows">
+        <img src="assets/Android.png" alt="Смартфон" class="image-android">
       </div>
     </div>
   </section>
 
-  <script>
-    const btnWindows = document.getElementById('btn-windows');
-    const btnAndroid = document.getElementById('btn-android');
-    const systemInfo = document.getElementById('system-info');
-    const downloadLink = document.getElementById('download-link');
-
-    const windowsInfo = `
-      <div><span>OC</span><p>Windows 10 (64 бит)</p></div>
-      <div><span>Процессор</span><p>Intel Core i5-6600K / AMD FX-6300</p></div>
-      <div><span>Оперативная память</span><p>6 ГБ</p></div>
-      <div><span>Видеокарта</span><p>От 2 ГБ видеопамяти</p></div>
-      <div><span>Место на диске</span><p>12 ГБ</p></div>
-    `;
-
-    const androidInfo = `
-      <div><span>OC</span><p>Android 7.0 и выше</p></div>
-      <div><span>Процессор</span><p>Snapdragon 665 / MediaTek Helio G85</p></div>
-      <div><span>Оперативная память</span><p>4 ГБ</p></div>
-      <div><span>Видеоускоритель</span><p>Adreno 610 / Mali-G52</p></div>
-      <div><span>Память</span><p>3 ГБ свободного места</p></div>
-    `;
-
-    btnWindows.addEventListener('click', () => {
-      btnWindows.classList.add('active');
-      btnAndroid.classList.remove('active');
-      systemInfo.innerHTML = windowsInfo;
-      downloadLink.textContent = "⬇ Скачать игру";
-    });
-
-    btnAndroid.addEventListener('click', () => {
-      btnAndroid.classList.add('active');
-      btnWindows.classList.remove('active');
-      systemInfo.innerHTML = androidInfo;
-      downloadLink.textContent = "⬇ Скачать игру на Android";
-    });
-  </script>
-
+  <!-- Новый блок статистики -->
+  <section class="stats-block">
+    <div class="stats-container">
+      <div class="stats-item">
+        <h2>240 тыс.</h2>
+        <p>читают в Telegram</p>
+      </div>
+      
+      <div class="stats-item">
+        <h2>176 тыс.</h2>
+        <p>смотрят на YouTube</p>
+      </div>
+    </div>
+    
+    <div class="game-description">
+      <h3>Играй в SAMP с HOLY RUSSIA CRMP!</h3>
+      <p>
+        Погрузись в открытый игровой мир и почувствуй себя в роли любого персонажа, 
+        известной реальной личности или выбери свой особенный путь – здесь доступны любые сценарии событий.
+      </p>
+      
+      <div class="history-block">
+        <h4>HOLY RUSSIA CRMP — игра, с которой началась история SAMP</h4>
+        <p>
+          История началась 18 сентября 2024 года. Благодаря стремительно растущей популярности проект развивался, 
+          охватывая все большее количество игроков. Уже к 2025 году HOLY RUSSIA CRMP занял лидирующие позиции 
+          по посещаемости среди всех известных проектов CRMP и сохраняет свои позиции по сей день, 
+          став полноценной отдельной игрой CRMP: HOLY RUSSIA.
+        </p>
+      </div>
+      
+      <p class="copyright">HOLY RUSSIA CRMP © 2025</p>
+    </div>
+  </section>
+  
   <footer>
     <p>© 2025 HOLY RUSSIA CRMP | Все права защищены</p>
   </footer>
